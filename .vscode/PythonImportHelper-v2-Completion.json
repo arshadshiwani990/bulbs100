@@ -1,0 +1,384 @@
+[
+    {
+        "label": "scrapy",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "scrapy",
+        "description": "scrapy",
+        "detail": "scrapy",
+        "documentation": {}
+    },
+    {
+        "label": "signals",
+        "importPath": "scrapy",
+        "description": "scrapy",
+        "isExtraImport": true,
+        "detail": "scrapy",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "importPath": "app",
+        "description": "app",
+        "isExtraImport": true,
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "is_item",
+        "importPath": "itemadapter",
+        "description": "itemadapter",
+        "isExtraImport": true,
+        "detail": "itemadapter",
+        "documentation": {}
+    },
+    {
+        "label": "ItemAdapter",
+        "importPath": "itemadapter",
+        "description": "itemadapter",
+        "isExtraImport": true,
+        "detail": "itemadapter",
+        "documentation": {}
+    },
+    {
+        "label": "ItemAdapter",
+        "importPath": "itemadapter",
+        "description": "itemadapter",
+        "isExtraImport": true,
+        "detail": "itemadapter",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "A1000bulbsSpiderSpider",
+        "kind": 6,
+        "importPath": "bulbs100.spiders.a1000bulbs_spider",
+        "description": "bulbs100.spiders.a1000bulbs_spider",
+        "peekOfCode": "class A1000bulbsSpiderSpider(scrapy.Spider):\n    name = '1000bulbs_spider'\n    allowed_domains = ['1000bulbs.com']\n    start_urls = ['http://1000bulbs.com/']\n    def start_requests(self):\n        url='https://www.1000bulbs.com/fil/search?q=red'\n        yield scrapy.Request(url=url, callback=self.parse_search_page)\n    def parse_search_page(self, response):\n        products=response.xpath('//div[@unbxdattr=\"product\"]')\n        for product in products:",
+        "detail": "bulbs100.spiders.a1000bulbs_spider",
+        "documentation": {}
+    },
+    {
+        "label": "Bulbs100Item",
+        "kind": 6,
+        "importPath": "bulbs100.items",
+        "description": "bulbs100.items",
+        "peekOfCode": "class Bulbs100Item(scrapy.Item):\n    # define the fields for your item here like:\n    # name = scrapy.Field()\n    pass",
+        "detail": "bulbs100.items",
+        "documentation": {}
+    },
+    {
+        "label": "Bulbs100SpiderMiddleware",
+        "kind": 6,
+        "importPath": "bulbs100.middlewares",
+        "description": "bulbs100.middlewares",
+        "peekOfCode": "class Bulbs100SpiderMiddleware:\n    # Not all methods need to be defined. If a method is not defined,\n    # scrapy acts as if the spider middleware does not modify the\n    # passed objects.\n    @classmethod\n    def from_crawler(cls, crawler):\n        # This method is used by Scrapy to create your spiders.\n        s = cls()\n        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)\n        return s",
+        "detail": "bulbs100.middlewares",
+        "documentation": {}
+    },
+    {
+        "label": "Bulbs100DownloaderMiddleware",
+        "kind": 6,
+        "importPath": "bulbs100.middlewares",
+        "description": "bulbs100.middlewares",
+        "peekOfCode": "class Bulbs100DownloaderMiddleware:\n    # Not all methods need to be defined. If a method is not defined,\n    # scrapy acts as if the downloader middleware does not modify the\n    # passed objects.\n    @classmethod\n    def from_crawler(cls, crawler):\n        # This method is used by Scrapy to create your spiders.\n        s = cls()\n        crawler.signals.connect(s.spider_opened, signal=signals.spider_opened)\n        return s",
+        "detail": "bulbs100.middlewares",
+        "documentation": {}
+    },
+    {
+        "label": "Bulbs100Pipeline",
+        "kind": 6,
+        "importPath": "bulbs100.pipelines",
+        "description": "bulbs100.pipelines",
+        "peekOfCode": "class Bulbs100Pipeline:\n    def process_item(self, item, spider):\n        return item",
+        "detail": "bulbs100.pipelines",
+        "documentation": {}
+    },
+    {
+        "label": "BOT_NAME",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "BOT_NAME = 'bulbs100'\nSPIDER_MODULES = ['bulbs100.spiders']\nNEWSPIDER_MODULE = 'bulbs100.spiders'\n# Crawl responsibly by identifying yourself (and your website) on the user-agent\n#USER_AGENT = 'bulbs100 (+http://www.yourdomain.com)'\n# Obey robots.txt rules\nROBOTSTXT_OBEY = True\n# Configure maximum concurrent requests performed by Scrapy (default: 16)\n#CONCURRENT_REQUESTS = 32\n# Configure a delay for requests for the same website (default: 0)",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "SPIDER_MODULES",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "SPIDER_MODULES = ['bulbs100.spiders']\nNEWSPIDER_MODULE = 'bulbs100.spiders'\n# Crawl responsibly by identifying yourself (and your website) on the user-agent\n#USER_AGENT = 'bulbs100 (+http://www.yourdomain.com)'\n# Obey robots.txt rules\nROBOTSTXT_OBEY = True\n# Configure maximum concurrent requests performed by Scrapy (default: 16)\n#CONCURRENT_REQUESTS = 32\n# Configure a delay for requests for the same website (default: 0)\n# See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "NEWSPIDER_MODULE",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "NEWSPIDER_MODULE = 'bulbs100.spiders'\n# Crawl responsibly by identifying yourself (and your website) on the user-agent\n#USER_AGENT = 'bulbs100 (+http://www.yourdomain.com)'\n# Obey robots.txt rules\nROBOTSTXT_OBEY = True\n# Configure maximum concurrent requests performed by Scrapy (default: 16)\n#CONCURRENT_REQUESTS = 32\n# Configure a delay for requests for the same website (default: 0)\n# See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay\n# See also autothrottle settings and docs",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#USER_AGENT",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#USER_AGENT = 'bulbs100 (+http://www.yourdomain.com)'\n# Obey robots.txt rules\nROBOTSTXT_OBEY = True\n# Configure maximum concurrent requests performed by Scrapy (default: 16)\n#CONCURRENT_REQUESTS = 32\n# Configure a delay for requests for the same website (default: 0)\n# See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay\n# See also autothrottle settings and docs\n#DOWNLOAD_DELAY = 3\n# The download delay setting will honor only one of:",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "ROBOTSTXT_OBEY",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "ROBOTSTXT_OBEY = True\n# Configure maximum concurrent requests performed by Scrapy (default: 16)\n#CONCURRENT_REQUESTS = 32\n# Configure a delay for requests for the same website (default: 0)\n# See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay\n# See also autothrottle settings and docs\n#DOWNLOAD_DELAY = 3\n# The download delay setting will honor only one of:\n#CONCURRENT_REQUESTS_PER_DOMAIN = 16\n#CONCURRENT_REQUESTS_PER_IP = 16",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#CONCURRENT_REQUESTS",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#CONCURRENT_REQUESTS = 32\n# Configure a delay for requests for the same website (default: 0)\n# See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay\n# See also autothrottle settings and docs\n#DOWNLOAD_DELAY = 3\n# The download delay setting will honor only one of:\n#CONCURRENT_REQUESTS_PER_DOMAIN = 16\n#CONCURRENT_REQUESTS_PER_IP = 16\n# Disable cookies (enabled by default)\n#COOKIES_ENABLED = False",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#DOWNLOAD_DELAY",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#DOWNLOAD_DELAY = 3\n# The download delay setting will honor only one of:\n#CONCURRENT_REQUESTS_PER_DOMAIN = 16\n#CONCURRENT_REQUESTS_PER_IP = 16\n# Disable cookies (enabled by default)\n#COOKIES_ENABLED = False\n# Disable Telnet Console (enabled by default)\n#TELNETCONSOLE_ENABLED = False\n# Override the default request headers:\n#DEFAULT_REQUEST_HEADERS = {",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#CONCURRENT_REQUESTS_PER_DOMAIN",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#CONCURRENT_REQUESTS_PER_DOMAIN = 16\n#CONCURRENT_REQUESTS_PER_IP = 16\n# Disable cookies (enabled by default)\n#COOKIES_ENABLED = False\n# Disable Telnet Console (enabled by default)\n#TELNETCONSOLE_ENABLED = False\n# Override the default request headers:\n#DEFAULT_REQUEST_HEADERS = {\n#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',\n#   'Accept-Language': 'en',",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#CONCURRENT_REQUESTS_PER_IP",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#CONCURRENT_REQUESTS_PER_IP = 16\n# Disable cookies (enabled by default)\n#COOKIES_ENABLED = False\n# Disable Telnet Console (enabled by default)\n#TELNETCONSOLE_ENABLED = False\n# Override the default request headers:\n#DEFAULT_REQUEST_HEADERS = {\n#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',\n#   'Accept-Language': 'en',\n#}",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#COOKIES_ENABLED",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#COOKIES_ENABLED = False\n# Disable Telnet Console (enabled by default)\n#TELNETCONSOLE_ENABLED = False\n# Override the default request headers:\n#DEFAULT_REQUEST_HEADERS = {\n#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',\n#   'Accept-Language': 'en',\n#}\n# Enable or disable spider middlewares\n# See https://docs.scrapy.org/en/latest/topics/spider-middleware.html",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#TELNETCONSOLE_ENABLED",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#TELNETCONSOLE_ENABLED = False\n# Override the default request headers:\n#DEFAULT_REQUEST_HEADERS = {\n#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',\n#   'Accept-Language': 'en',\n#}\n# Enable or disable spider middlewares\n# See https://docs.scrapy.org/en/latest/topics/spider-middleware.html\n#SPIDER_MIDDLEWARES = {\n#    'bulbs100.middlewares.Bulbs100SpiderMiddleware': 543,",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#DEFAULT_REQUEST_HEADERS",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#DEFAULT_REQUEST_HEADERS = {\n#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',\n#   'Accept-Language': 'en',\n#}\n# Enable or disable spider middlewares\n# See https://docs.scrapy.org/en/latest/topics/spider-middleware.html\n#SPIDER_MIDDLEWARES = {\n#    'bulbs100.middlewares.Bulbs100SpiderMiddleware': 543,\n#}\n# Enable or disable downloader middlewares",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#SPIDER_MIDDLEWARES",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#SPIDER_MIDDLEWARES = {\n#    'bulbs100.middlewares.Bulbs100SpiderMiddleware': 543,\n#}\n# Enable or disable downloader middlewares\n# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html\n#DOWNLOADER_MIDDLEWARES = {\n#    'bulbs100.middlewares.Bulbs100DownloaderMiddleware': 543,\n#}\n# Enable or disable extensions\n# See https://docs.scrapy.org/en/latest/topics/extensions.html",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#DOWNLOADER_MIDDLEWARES",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#DOWNLOADER_MIDDLEWARES = {\n#    'bulbs100.middlewares.Bulbs100DownloaderMiddleware': 543,\n#}\n# Enable or disable extensions\n# See https://docs.scrapy.org/en/latest/topics/extensions.html\n#EXTENSIONS = {\n#    'scrapy.extensions.telnet.TelnetConsole': None,\n#}\n# Configure item pipelines\n# See https://docs.scrapy.org/en/latest/topics/item-pipeline.html",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#EXTENSIONS",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#EXTENSIONS = {\n#    'scrapy.extensions.telnet.TelnetConsole': None,\n#}\n# Configure item pipelines\n# See https://docs.scrapy.org/en/latest/topics/item-pipeline.html\n#ITEM_PIPELINES = {\n#    'bulbs100.pipelines.Bulbs100Pipeline': 300,\n#}\n# Enable and configure the AutoThrottle extension (disabled by default)\n# See https://docs.scrapy.org/en/latest/topics/autothrottle.html",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#ITEM_PIPELINES",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#ITEM_PIPELINES = {\n#    'bulbs100.pipelines.Bulbs100Pipeline': 300,\n#}\n# Enable and configure the AutoThrottle extension (disabled by default)\n# See https://docs.scrapy.org/en/latest/topics/autothrottle.html\n#AUTOTHROTTLE_ENABLED = True\n# The initial download delay\n#AUTOTHROTTLE_START_DELAY = 5\n# The maximum download delay to be set in case of high latencies\n#AUTOTHROTTLE_MAX_DELAY = 60",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#AUTOTHROTTLE_ENABLED",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#AUTOTHROTTLE_ENABLED = True\n# The initial download delay\n#AUTOTHROTTLE_START_DELAY = 5\n# The maximum download delay to be set in case of high latencies\n#AUTOTHROTTLE_MAX_DELAY = 60\n# The average number of requests Scrapy should be sending in parallel to\n# each remote server\n#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0\n# Enable showing throttling stats for every response received:\n#AUTOTHROTTLE_DEBUG = False",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#AUTOTHROTTLE_START_DELAY",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#AUTOTHROTTLE_START_DELAY = 5\n# The maximum download delay to be set in case of high latencies\n#AUTOTHROTTLE_MAX_DELAY = 60\n# The average number of requests Scrapy should be sending in parallel to\n# each remote server\n#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0\n# Enable showing throttling stats for every response received:\n#AUTOTHROTTLE_DEBUG = False\n# Enable and configure HTTP caching (disabled by default)\n# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#AUTOTHROTTLE_MAX_DELAY",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#AUTOTHROTTLE_MAX_DELAY = 60\n# The average number of requests Scrapy should be sending in parallel to\n# each remote server\n#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0\n# Enable showing throttling stats for every response received:\n#AUTOTHROTTLE_DEBUG = False\n# Enable and configure HTTP caching (disabled by default)\n# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings\n#HTTPCACHE_ENABLED = True\n#HTTPCACHE_EXPIRATION_SECS = 0",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#AUTOTHROTTLE_TARGET_CONCURRENCY",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0\n# Enable showing throttling stats for every response received:\n#AUTOTHROTTLE_DEBUG = False\n# Enable and configure HTTP caching (disabled by default)\n# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings\n#HTTPCACHE_ENABLED = True\n#HTTPCACHE_EXPIRATION_SECS = 0\n#HTTPCACHE_DIR = 'httpcache'\n#HTTPCACHE_IGNORE_HTTP_CODES = []\n#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#AUTOTHROTTLE_DEBUG",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#AUTOTHROTTLE_DEBUG = False\n# Enable and configure HTTP caching (disabled by default)\n# See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings\n#HTTPCACHE_ENABLED = True\n#HTTPCACHE_EXPIRATION_SECS = 0\n#HTTPCACHE_DIR = 'httpcache'\n#HTTPCACHE_IGNORE_HTTP_CODES = []\n#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#HTTPCACHE_ENABLED",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#HTTPCACHE_ENABLED = True\n#HTTPCACHE_EXPIRATION_SECS = 0\n#HTTPCACHE_DIR = 'httpcache'\n#HTTPCACHE_IGNORE_HTTP_CODES = []\n#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#HTTPCACHE_EXPIRATION_SECS",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#HTTPCACHE_EXPIRATION_SECS = 0\n#HTTPCACHE_DIR = 'httpcache'\n#HTTPCACHE_IGNORE_HTTP_CODES = []\n#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#HTTPCACHE_DIR",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#HTTPCACHE_DIR = 'httpcache'\n#HTTPCACHE_IGNORE_HTTP_CODES = []\n#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#HTTPCACHE_IGNORE_HTTP_CODES",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#HTTPCACHE_IGNORE_HTTP_CODES = []\n#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "#HTTPCACHE_STORAGE",
+        "kind": 5,
+        "importPath": "bulbs100.settings",
+        "description": "bulbs100.settings",
+        "peekOfCode": "#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'",
+        "detail": "bulbs100.settings",
+        "documentation": {}
+    },
+    {
+        "label": "cookies",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "cookies = {\n    'PHPSESSID': 'b9473c7b1f6785b2752f7804ae',\n    '_session_id': '3a8ce78520f3af8809896c207428be61',\n    'osano_consentmanager_uuid': '168963d9-ee5e-4076-91de-44ab830bd55a',\n    'osano_consentmanager': '4-eRQBjXar_wxJNma3le3X5lO3ayCXHKy_ipeTbOHYiPI-cC1SIiPMPjdArGYKQMOu8Iz8EEF81FLJwtKGZS0ahX4oWi_PZlM0KVVMNl1UJXMjHQxNtRPHexMdntA5dHIqQ7AbrqNUn5WGgAMyDgOQuad3E8Rw3bywzz49EAQtBtbGM497iPX-Z8TlguOnWFpu-AclEZi87Kf4MzXsVwmvQ_T97s01iuhf8CLvb9IC4b6peIZ3sHGj2z-PTrBif_U_K1jD8Uf-3PCKUcYGsgYMAl2nTtfCD8W_WH6w==',\n    '_ga_97GQ5HG548': 'GS1.1.1725864942.1.0.1725864942.60.0.0',\n    'BVBRANDID': 'cbef30d6-68d4-43b1-865b-99be1a67247f',\n    'BVBRANDSID': 'cceacaea-e42d-4eec-93aa-80eb021fe53e',\n    'unbxd.userId': 'uid-1725864942996-13091',\n    'unbxd.visit': 'first_time',",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "headers",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "headers = {\n    'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',\n    'accept-language': 'en-US,en;q=0.9',\n    # 'cookie': 'PHPSESSID=b9473c7b1f6785b2752f7804ae; _session_id=3a8ce78520f3af8809896c207428be61; osano_consentmanager_uuid=168963d9-ee5e-4076-91de-44ab830bd55a; osano_consentmanager=4-eRQBjXar_wxJNma3le3X5lO3ayCXHKy_ipeTbOHYiPI-cC1SIiPMPjdArGYKQMOu8Iz8EEF81FLJwtKGZS0ahX4oWi_PZlM0KVVMNl1UJXMjHQxNtRPHexMdntA5dHIqQ7AbrqNUn5WGgAMyDgOQuad3E8Rw3bywzz49EAQtBtbGM497iPX-Z8TlguOnWFpu-AclEZi87Kf4MzXsVwmvQ_T97s01iuhf8CLvb9IC4b6peIZ3sHGj2z-PTrBif_U_K1jD8Uf-3PCKUcYGsgYMAl2nTtfCD8W_WH6w==; _ga_97GQ5HG548=GS1.1.1725864942.1.0.1725864942.60.0.0; BVBRANDID=cbef30d6-68d4-43b1-865b-99be1a67247f; BVBRANDSID=cceacaea-e42d-4eec-93aa-80eb021fe53e; unbxd.userId=uid-1725864942996-13091; unbxd.visit=first_time; unbxd.visitId=visitId-1725864943027-690; _gcl_au=1.1.1605701644.1725864943; _ga=GA1.2.939328973.1725864942; _gid=GA1.2.1792478640.1725864944; _fbp=fb.1.1725864944038.898363844508073499; _uetsid=88b782306e7811ef9c50818231a6f524; _uetvid=88b8aa006e7811ef9c14dbac332936f7; mp_1000bulbs_mixpanel=%7B%22distinct_id%22%3A%20%22191d5912828fd-0b1584d1f1125a-26001151-1fa400-191d591282967c%22%2C%22bc_persist_updated%22%3A%201725864945712%7D; bc_invalidateUrlCache_targeting=1725864946355; wcsid=gfqxNNn1sRBRbCXg763JE0K0kr6BabCj; hblid=DL0OHkwaRt0Ia4XT763JE0KBkaoAIr6b; _okdetect=%7B%22token%22%3A%2217258649474200%22%2C%22proto%22%3A%22about%3A%22%2C%22host%22%3A%22%22%7D; bluecoreNV=true; olfsk=olfsk270538739143531; _okbk=cd4%3Dtrue%2Cvi5%3D0%2Cvi4%3D1725864948665%2Cvi3%3Dactive%2Cvi2%3Dfalse%2Cvi1%3Dfalse%2Ccd8%3Dchat%2Ccd6%3D0%2Ccd5%3Daway%2Ccd3%3Dfalse%2Ccd2%3D0%2Ccd1%3D0%2C; _ok=2655-148-10-3067; _ce.irv=new; cebs=1; _ce.clock_event=1; _clck=10ftjhe%7C2%7Cfp1%7C0%7C1713; _ce.clock_data=-2066%2C39.34.130.66%2C1%2Ce8db1a910ee088b469ecfd2b6a9b9da5%2CChrome%2CPK; cebsp_=1; _clsk=y4ertd%7C1725864953702%7C1%7C1%7Cx.clarity.ms%2Fcollect; _oklv=1725865007389%2CgfqxNNn1sRBRbCXg763JE0K0kr6BabCj; invoca_session=%7B%22ttl%22%3A%222024-10-09T06%3A57%3A24.603Z%22%2C%22session%22%3A%7B%22invoca_id%22%3A%22i-bace4f4c-385c-4a16-9857-764295886e92%22%7D%2C%22config%22%3A%7B%22ce%22%3Atrue%2C%22fv%22%3Afalse%2C%22rn%22%3Afalse%7D%7D; unbxd.pen.search.1725865044823=eyJxdWVyeSI6InJlZCIsInVybCI6Imh0dHBzOi8vd3d3LjEwMDBidWxicy5jb20vIiwicmVmZXJyZXIiOiIiLCJ2aXNpdF90eXBlIjoiZmlyc3RfdGltZSIsInZlciI6IjQuMC4yOCIsIl91ZiI6Mjg3Mjg5Njc0NywidmlzaXRJZCI6InZpc2l0SWQtMTcyNTg2NDk0MzAyNy02OTAifQ%3D%3D; _ce.s=v~ab5e4a57bfe693006438a86c61aa94617c29d998~lcw~1725865044801~lva~1725864950726~vpv~0~v11.fs~1~v11.cs~87604~v11.s~8d75c050-6e78-11ef-ae43-3b6978068327~v11.sla~1725865044795~v11ls~8d75c050-6e78-11ef-ae43-3b6978068327~v11nv~1~gtrk.la~m0unhjcx~v11.send~1725865044935~lcw~1725865044936',\n    'priority': 'u=0, i',\n    'referer': 'https://www.1000bulbs.com/',\n    'sec-ch-ua': '\"Chromium\";v=\"128\", \"Not;A=Brand\";v=\"24\", \"Google Chrome\";v=\"128\"',\n    'sec-ch-ua-mobile': '?0',\n    'sec-ch-ua-platform': '\"Windows\"',\n    'sec-fetch-dest': 'document',",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "params",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "params = {\n    'q': 'red',\n}\nresponse = requests.get('https://www.1000bulbs.com/fil/search', params=params, cookies=cookies, headers=headers)",
+        "detail": "app",
+        "documentation": {}
+    },
+    {
+        "label": "response",
+        "kind": 5,
+        "importPath": "app",
+        "description": "app",
+        "peekOfCode": "response = requests.get('https://www.1000bulbs.com/fil/search', params=params, cookies=cookies, headers=headers)",
+        "detail": "app",
+        "documentation": {}
+    }
+]
